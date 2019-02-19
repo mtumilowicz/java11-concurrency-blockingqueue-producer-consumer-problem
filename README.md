@@ -1,8 +1,7 @@
 # java11-concurrency-blockingqueue-producer-consumer-problem
 
-https://github.com/mtumilowicz/java11-concurrency-wait-notify-producer-consumer-problem
-
 # preface
+* https://github.com/mtumilowicz/java11-concurrency-wait-notify-producer-consumer-problem
 * https://github.com/mtumilowicz/java-collections-queue
 * `BlockingQueue<E> extends Queue<E>`
 * additional methods
@@ -36,3 +35,32 @@ https://github.com/mtumilowicz/java11-concurrency-wait-notify-producer-consumer-
 * blocking queue does not allow a null element
 * blocking queue can be bounded or unbounded
 * `LinkedBlockingQueue` is one of many implementations of `BlockingQueue` interface
+
+# project description
+The project is the same as https://github.com/mtumilowicz/java11-concurrency-wait-notify-producer-consumer-problem
+but instead of performing synchronization by ourselves we delegate the responsibility to the `LinkedBlockingQueue`.
+
+So, the only change is in the `Buffer` class:
+```
+class Buffer {
+    private final BlockingQueue<String> words = new LinkedBlockingQueue<>(1);
+
+    void produce(String word) {
+        try {
+            this.words.put(word);
+        } catch (InterruptedException e) {
+            // not used
+        }
+    }
+
+    String consume() {
+        try {
+            return words.take();
+        } catch (InterruptedException e) {
+            // not used
+        }
+        
+        return null;
+    }
+}
+```
