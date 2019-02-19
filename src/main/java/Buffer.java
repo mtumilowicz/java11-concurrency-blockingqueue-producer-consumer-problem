@@ -1,10 +1,11 @@
+import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by mtumilowicz on 2019-02-15.
  */
 class Buffer {
-    private final LinkedBlockingQueue<String> words = new LinkedBlockingQueue<>(1);
+    private final BlockingQueue<String> words = new LinkedBlockingQueue<>(1);
 
     void produce(String word) {
         try {
