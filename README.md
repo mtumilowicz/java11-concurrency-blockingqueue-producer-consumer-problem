@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/mtumilowicz/java11-concurrency-blockingqueue-producer-consumer-problem.svg?branch=master)](https://travis-ci.com/mtumilowicz/java11-concurrency-blockingqueue-producer-consumer-problem)
+
 # java11-concurrency-blockingqueue-producer-consumer-problem
 
 # preface
