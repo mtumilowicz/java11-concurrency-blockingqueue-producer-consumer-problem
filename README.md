@@ -23,4 +23,9 @@ https://github.com/mtumilowicz/java11-concurrency-wait-notify-producer-consumer-
             * inserts the specified element into this queue, waiting if necessary for space to become available
     * removing
         * `E take()`
+            * retrieves and removes the head of this queue, waiting if necessary until an element becomes available
         * `E poll(long timeout, TimeUnit unit)`
+            * retrieves and removes the head of this queue, waiting up to the
+              specified wait time if necessary for an element to become available
+            * returns the head of this queue, or `null` if the specified waiting time elapses 
+              before an element is available
