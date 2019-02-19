@@ -32,7 +32,7 @@
        (in the absence of memory or resource constraints) accept without
         blocking, or `Integer.MAX_VALUE` if there is no intrinsic limit
 * usually used in a producer/consumer-like situations
-* blocking queue does not allow a null element
+* blocking queue does not allow a `null` element
 * blocking queue can be bounded or unbounded
 * `LinkedBlockingQueue` is one of many implementations of `BlockingQueue` interface
 
